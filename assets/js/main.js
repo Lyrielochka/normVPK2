@@ -257,7 +257,7 @@ function persistNews(items) {
 
 async function refreshNewsFromFile() {
   try {
-    const response = await fetch(NEWS_FILE_PATH, { cache: "no-store" });
+    const response = await fetch(NEWS_FILE_PATH, { cache: "force-cache" });
     if (!response.ok) throw new Error(`Failed to load ${NEWS_FILE_PATH}`);
     const parsed = await response.json();
     if (!Array.isArray(parsed)) throw new Error("Invalid news format");
@@ -354,7 +354,7 @@ function setupNewsModal() {
     galleryEl.innerHTML = prepareGallery(item)
       .map(
         (src, idx) =>
-          `<figure class="news-modal__photo"><img src="${src}" alt="${escapeHTML(item.title)} ${idx + 1}"></figure>`
+          `<figure class="news-modal__photo"><img src="${src}" alt="${escapeHTML(item.title)} ${idx + 1}" loading="lazy" decoding="async"></figure>`
       )
       .join("");
 
@@ -410,7 +410,7 @@ function initNewsSlider(openNewsModal) {
       .map(
         (item) => `
       <div class="news__card" data-id="${item.id}">
-        <img src="${item.cover}" alt="${escapeHTML(item.title)}" loading="lazy" class="news__image">
+        <img src="${item.cover}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" class="news__image">
         <div class="news__meta">
           <span class="news__tag">${escapeHTML(item.category)}</span>
           <span class="news__tag">${formatNewsDate(item.date)}</span>

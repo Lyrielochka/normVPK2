@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable">
   <title>ВПК «Вымпел»</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://maps.googleapis.com">
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="preload" href="assets/img/fonVPK.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
 </head>
 <body>
   <div class="layout">
     <nav>
-      <a href="#hero" aria-label="На главную">
-        <div><img class="logo" src="assets/img/gerb.webp" alt="Герб ВПК Вымпел"></div>
+            <a href="#hero" aria-label="??????? ? ??????">
+        <div>
+          <img class="logo" src="assets/img/gerb.webp" alt="????" fetchpriority="high" decoding="async">
+        </div>
       </a>
 
       <button class="burger" aria-label="Открыть меню">≡</button>
@@ -27,7 +35,7 @@
         <a class="authorize authorize--mobile mobile-only" href="register.html">Регистрация</a>
               <div class="layout-footer-mobile">
           <div class="layout-footer-mobile__brand">
-            <img src="assets/img/gerb.webp" alt="????" class="layout-footer-mobile__logo">
+            <img loading="lazy" decoding="async" src="assets/img/gerb.webp" alt="????" class="layout-footer-mobile__logo">
             <span>Военно-патриотический клуб "Вымпел"</span>
           </div>
           <a class="layout-footer-mobile__mortred" href="https://mortred.by/" target="_blank" rel="noopener noreferrer">
@@ -48,12 +56,12 @@
 
       <section id="about" class="aboutUs">
         <div class="aboutUs__header">
-          <h2 class="aboutUs__title">О нас<img class="mark" src="assets/img/headerUS.webp" alt=""></h2>
+          <h2 class="aboutUs__title">О нас<img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt=""></h2>
         </div>
 
         <div class="aboutUs__content">
           <div class="aboutUs__image">
-            <img src="assets/img/gerb.webp" alt="О нас">
+            <img loading="lazy" decoding="async" src="assets/img/gerb.webp" alt="О нас">
           </div>
 
           <div class="aboutUs__text">
@@ -72,36 +80,36 @@
         </div>
 
         <div class="aboutUs__line">
-          <img src="assets/img/line.webp" alt="">
+          <img loading="lazy" decoding="async" src="assets/img/line.webp" alt="">
         </div>
       </section>
 
       <section id="values" class="wrapperValues">
-        <h2 class="wrapperValues__title">Наши ценности<img class="mark" src="assets/img/headerUS.webp" alt=""></h2>
+        <h2 class="wrapperValues__title">Наши ценности<img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt=""></h2>
         <div class="wrapperValues__container">
           <div class="wrapperValues__card">
-            <div class="kart"><img src="assets/img/card1.webp" alt=""></div>
+            <div class="kart"><img loading="lazy" decoding="async" src="assets/img/card1.webp" alt=""></div>
             <div class="txt">
               <h2>Стабильность</h2>
               <p>Мы опираемся на традиции и проверенные ценности. <br> Стабильность — это уверенность в завтрашнем дне, вера в команду и готовность действовать с хладнокровием и честью в любых обстоятельствах.<br></p>
             </div>
           </div>
           <div class="wrapperValues__card">
-            <div class="kart"><img src="assets/img/card2.webp" alt=""></div>
+            <div class="kart"><img loading="lazy" decoding="async" src="assets/img/card2.webp" alt=""></div>
             <div class="txt">
               <h2>Устойчивость</h2>
               <p>Мы развиваемся через знание и технологический прогресс. <br> Совмещая военную выправку с современными ИТ-проектами, мы формируем поколение, способное мыслить стратегически и действовать точно. <br> Возможностей для бизнеса до последовательного развития <br> <br> </p>
             </div>
           </div>
           <div class="wrapperValues__card">
-            <div class="kart"><img src="assets/img/card3.webp" alt=""></div>
+            <div class="kart"><img loading="lazy" decoding="async" src="assets/img/card3.webp" alt=""></div>
             <div class="txt">
               <h2>Команда</h2>
               <p>В «Вымпеле» каждый — часть единого строя. <br> Нас объединяет взаимная поддержка, уважение и общее дело — воспитание сильных духом, образованных и ответственных граждан своей страны.<br> </p>
             </div>
           </div>
           <div class="wrapperValues__card">
-            <div class="kart"><img src="assets/img/card4.webp" alt=""></div>
+            <div class="kart"><img loading="lazy" decoding="async" src="assets/img/card4.webp" alt=""></div>
             <div class="txt">
               <h2>Репутация</h2>
               <p>Честь — наш главный знак отличия.<br> Мы следуем принципам дисциплины, ответственности и патриотизма. Наши дела говорят громче слов — мы делаем то, что обещаем.</p>
@@ -109,21 +117,21 @@
           </div>
         </div>
         <div class="wrapperValues__line">
-          <img src="assets/img/line2.webp" alt="">
+          <img loading="lazy" decoding="async" src="assets/img/line2.webp" alt="">
         </div>
       </section>
 
       <section id="projects" class="wrapperProjects">
         <h2 class="wrapperProjects__title">
           Наши проекты
-          <img class="mark" src="assets/img/headerUS.webp" alt="">
+          <img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt="">
         </h2>
 
         <div class="wrapperProjects__container">
           <div class="wrapperProjects__card">
             <a href="https://11wwbel.netlify.app/" target="_blank" rel="noopener noreferrer">
               <div class="project-img">
-                <img src="assets/img/project1.webp" alt="Первая мировая на землях Беларуси">
+                <img loading="lazy" decoding="async" src="assets/img/project1.webp" alt="Первая мировая на землях Беларуси">
               </div>
             </a>
             <div class="project-text">
@@ -133,7 +141,7 @@
           <div class="wrapperProjects__card">
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
               <div class="project-img">
-                <img src="assets/img/project2.webp" alt="Проект 2">
+                <img loading="lazy" decoding="async" src="assets/img/project2.webp" alt="Проект 2">
               </div>
             </a>
             <div class="project-text">
@@ -143,7 +151,7 @@
           <div class="wrapperProjects__card">
             <a href="https://napoleonvpk.netlify.app/" target="_blank" rel="noopener noreferrer">
               <div class="project-img">
-                <img src="assets/img/project3.webp" alt="Проект 3">
+                <img loading="lazy" decoding="async" src="assets/img/project3.webp" alt="Проект 3">
               </div>
             </a>
             <div class="project-text">
@@ -153,7 +161,7 @@
           <div class="wrapperProjects__card">
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
               <div class="project-img">
-                <img src="assets/img/project4.webp" alt="Проект 4">
+                <img loading="lazy" decoding="async" src="assets/img/project4.webp" alt="Проект 4">
               </div>
             </a>
             <div class="project-text">
@@ -163,14 +171,14 @@
         </div>
 
         <div class="wrapperProjects__line">
-          <img src="assets/img/line2.webp" alt="">
+          <img loading="lazy" decoding="async" src="assets/img/line2.webp" alt="">
         </div>
       </section>
 
       <section id="team" class="team">
         <div class="team__header-row">
           <h2 class="team__title">
-            Наша команда <img class="mark" src="assets/img/headerUS.webp" alt="">
+            Наша команда <img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt="">
           </h2>
           <a class="team__view-all" href="team-all.html">Посмотреть всех</a>
         </div>
@@ -187,7 +195,7 @@
         </div>
 
         <div class="team__line">
-          <img src="assets/img/line3.webp" alt="">
+          <img loading="lazy" decoding="async" src="assets/img/line3.webp" alt="">
         </div>
 
         <div class="team-profile-modal" data-team-profile-modal hidden>
@@ -196,12 +204,12 @@
             <div class="team-profile-body">
               <div class="team-profile-left">
                 <div class="team-profile-rank" data-profile-rank>
-                  <img data-profile-rank-icon src="" alt="">
+                  <img loading="lazy" decoding="async" data-profile-rank-icon src="" alt="">
                   <span data-profile-rank-title></span>
                 </div>
                 <h3 class="team-profile-name" data-profile-name></h3>
                 <div class="team-profile-avatar">
-                  <img data-profile-photo src="" alt="">
+                  <img loading="lazy" decoding="async" data-profile-photo src="" alt="">
                 </div>
                 <ul class="team-profile-meta">
                   <li>
@@ -246,7 +254,7 @@
       <section id="news" class="news">
         <div class="news__header">
           <h2 class="news__title">
-            Новости <img class="mark" src="assets/img/headerUS.webp" alt="">
+            Новости <img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt="">
           </h2>
 
                     <div class="news__actions" data-news-admin-bar>
@@ -364,7 +372,7 @@
       <section id="achievements" class="advunture">
         <h1 class="advunture__title">
           Наши достижения
-          <img class="mark" src="assets/img/headerUS.webp" alt="">
+          <img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt="">
         </h1>
 
         <p class="advunture__description">
@@ -380,20 +388,20 @@
         </div>
 
         <div class="advunture__line">
-          <img src="assets/img/line3.webp" alt="">
+          <img loading="lazy" decoding="async" src="assets/img/line3.webp" alt="">
         </div>
 
         <div class="advunture__modal" data-component="achievement-modal" hidden>
           <div class="advunture__modal-content">
             <button class="advunture__modal-close" aria-label="Закрыть">×</button>
-            <img src="" alt="">
+            <img loading="lazy" decoding="async" src="" alt="">
             <h3></h3>
           </div>
         </div>
       </section>
 
       <section id="contacts" class="contacts">
-        <h2 class="contacts__title">Контакты<img class="mark" src="assets/img/headerUS.webp" alt=""></h2>
+        <h2 class="contacts__title">Контакты<img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt=""></h2>
         <div class="contacts__info">
           <div class="contacts__details">
             <p><strong>Электронная почта</strong></p>
@@ -413,13 +421,13 @@
           </div>
         </div>
         <div class="line">
-          <img src="assets/img/line.webp" alt="">
+          <img loading="lazy" decoding="async" src="assets/img/line.webp" alt="">
         </div>
       </section>
 
       <footer class="footer">
         <div class="footer__logo">
-          <img src="assets/img/gerb.webp" alt="????">
+          <img loading="lazy" decoding="async" src="assets/img/gerb.webp" alt="????">
           <span>Военно-патриотический клуб "«Вымпел»</span>
         </div>
 
@@ -436,19 +444,23 @@
 
   <div class="container-icons">
     <a href="mailto:egortto@yandex.by" aria-label="Почта">
-      <div class="emal"><img src="assets/img/email.webp" alt=""></div>
+      <div class="emal"><img loading="lazy" decoding="async" src="assets/img/email.webp" alt=""></div>
     </a>
     <a href="https://t.me/+2iWyY7YcU9BmMTgy" aria-label="Телеграм">
-      <div class="telegram"><img src="assets/img/telegram.webp" alt=""></div>
+      <div class="telegram"><img loading="lazy" decoding="async" src="assets/img/telegram.webp" alt=""></div>
     </a>
   </div>
 
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js").catch(() => {});
+      });
+    }
+  </script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/team.js" defer></script>
 </body>
 </html>
-
-
-
 
 

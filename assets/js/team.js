@@ -659,7 +659,7 @@ function initTeamSlider() {
             .map(
               (token) => `
                 <div class="team-profile-token">
-                  <img src="${token.icon}" alt="${token.title}">
+                  <img src="${token.icon}" alt="${token.title}" loading="lazy" decoding="async">
                 </div>
               `
             )
@@ -728,7 +728,7 @@ function initTeamSlider() {
           ${
             member.rank
               ? `<div class="team__rank">
-                  <img src="${member.rank.icon}" alt="Ранг: ${member.rank.title}">
+                  <img src="${member.rank.icon}" alt="Ранг: ${member.rank.title}" loading="lazy" decoding="async">
                   <span>${member.rank.title}</span>
                 </div>`
               : ""
