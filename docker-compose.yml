@@ -1,0 +1,21 @@
+services:
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: wmp-by
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./index.html:/usr/share/caddy/index.html:ro
+      - ./register.html:/usr/share/caddy/register.html:ro
+      - ./team-all.html:/usr/share/caddy/team-all.html:ro
+      - ./news-data.json:/usr/share/caddy/news-data.json:ro
+      - ./assets:/usr/share/caddy/assets:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

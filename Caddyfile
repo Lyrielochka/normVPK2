@@ -1,0 +1,10 @@
+wmp.by {
+    root * /usr/share/caddy
+    encode gzip zstd
+
+    @blocked path /.git* /Caddyfile /Dockerfile /docker-compose.yml /docker-compose.yaml *.py *.scss *.md
+    respond @blocked 404
+
+    try_files {path} /index.html
+    file_server
+}
