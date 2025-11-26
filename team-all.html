@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вся команда — ВПК «Вымпел»</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <nav>
+      <a href="index.html#hero" aria-label="На главную">
+        <div><img class="logo" src="assets/img/gerb.webp" alt="Логотип клуба"></div>
+      </a>
+
+      <button class="burger" aria-label="Открыть меню">☰</button>
+      <button class="menu-toggle mobile-only" type="button" aria-label="Меню">Меню</button>
+
+      <div class="layout-links">
+        <a href="index.html#about">О нас</a>
+        <a href="index.html#values">Ценности</a>
+        <a href="index.html#projects">Проекты</a>
+        <a href="index.html#team">Команда</a>
+        <a href="index.html#news">Новости</a>
+        <a href="index.html#achievements">Достижения</a>
+        <a href="index.html#contacts">Контакты</a>
+      </div>
+
+      <div class="layout-contact desktop-only">
+        <a class="authorize" href="index.html#contacts">Регистрация</a>
+      </div>
+    </nav>
+  </div>
+
+  <main class="team-page">
+    <section class="team-page__hero">
+      <h1>Наша команда</h1>
+
+    </section>
+
+    <div class="team-page__inner">
+      <div class="team-page__grid" data-component="team-grid"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo">
+      <img src="assets/img/gerb.webp" alt="????" loading="lazy" decoding="async">
+      <span>Военно-патриотический клуб "«Вымпел»</span>
+    </div>
+
+    <div class="footer__line"></div>
+
+    <div class="footer__mortred">
+      <a class="mortred-btn" href="https://mortred.by/" target="_blank" rel="noopener noreferrer">
+        Powered by Mortred Forge
+      </a>
+    </div>
+  </footer>
+
+  <div class="container-icons">
+    <a href="mailto:egortto@yandex.by" aria-label="Почта">
+      <div class="emal"><img src="assets/img/email.webp" alt="" loading="lazy" decoding="async"></div>
+    </a>
+    <a href="https://t.me/+2iWyY7YcU9BmMTgy" aria-label="Телеграм">
+      <div class="telegram"><img src="assets/img/telegram.webp" alt="" loading="lazy" decoding="async"></div>
+    </a>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/team.js" defer></script>
+  <script src="assets/js/team-page.js" defer></script>
+</body>
+</html>
+
+

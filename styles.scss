@@ -1,0 +1,32 @@
+@import "../my-app/src/index.css";
+@import "../my-app/src/App.css";
+@import "../my-app/src/theme/scss/Lauout.scss";
+@import "../my-app/src/theme/scss/sloiOne.scss";
+@import "../my-app/src/theme/scss/AboutUS.scss";
+@import "../my-app/src/theme/scss/OurValues.scss";
+@import "../my-app/src/theme/scss/OurProjects.scss";
+@import "../my-app/src/theme/scss/OurTeam.scss";
+@import "../my-app/src/theme/scss/News.scss";
+@import "../my-app/src/theme/scss/NewsPage.scss";
+@import "../my-app/src/theme/scss/Advuntures.scss";
+@import "../my-app/src/theme/scss/ContactBlock.scss";
+@import "../my-app/src/theme/scss/Footer.scss";
+@import "../my-app/src/theme/scss/ScrollBar.scss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #141414;
+  color: #fff;
+  font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+main {
+  overflow-x: hidden;
+}

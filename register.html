@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация — регистрация</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <nav>
+      <a href="index.html#hero" aria-label="Вернуться на главную">
+        <div><img class="logo" src="assets/img/gerb.webp" alt="Логотип"></div>
+      </a>
+
+      <button class="burger" aria-label="Открыть меню">☰</button>
+
+      <div class="layout-links">
+        <a href="index.html#about">О нас</a>
+        <a href="index.html#values">Ценности</a>
+        <a href="index.html#projects">Проекты</a>
+        <a href="index.html#team">Команда</a>
+        <a href="index.html#news">Новости</a>
+        <a href="index.html#achievements">Достижения</a>
+        <a href="index.html#contacts">Контакты</a>
+        <a class="authorize authorize--mobile mobile-only" href="register.html">???????????</a>
+              <div class="layout-footer-mobile">
+          <div class="layout-footer-mobile__brand">
+            <img src="assets/img/gerb.webp" alt="????" class="layout-footer-mobile__logo">
+            <span>??????-?????????????? ???? "????????"</span>
+          </div>
+          <a class="layout-footer-mobile__mortred" href="https://mortred.by/" target="_blank" rel="noopener noreferrer">
+            Powered by Mortred Forge
+          </a>
+        </div>
+
+      <div class="layout-contact desktop-only">
+        <a class="authorize" href="#register">Регистрация</a>
+      </div>
+    </nav>
+  </div>
+
+  <main class="App register-page">
+    <section class="register" id="register">
+      <div class="register__header">
+        <p class="register__eyebrow">Регистрация? Заполни формочку</p>
+        <h1 class="register__title">Регистрация</h1>
+
+        </p>
+      </div>
+
+      <div class="register__card">
+        <form class="register__form" data-register-form>
+          <label class="register__field">
+            <span>Почта</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+
+          <label class="register__field">
+            <span>Пароль</span>
+            <input type="password" name="password" placeholder="••••••••" required>
+          </label>
+
+          <label class="register__field">
+            <span>Подтверждение пароля</span>
+            <input type="password" name="confirm" placeholder="повтори пароль" required>
+          </label>
+
+          <label class="register__field">
+            <span>В чём смысл жизни?</span>
+            <textarea name="meaning" rows="3" placeholder="ну-ка, выкладывай…" required></textarea>
+          </label>
+
+          <div class="register__actions">
+            <button class="register__submit" type="submit">Отправить</button>
+          </div>
+
+          <div class="register__message" data-register-message hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="assets/img/gerb.webp" alt="Герб">
+        <span>Военно-патриотический клуб "Вымпел"</span>
+      </div>
+
+      <div class="footer__line"></div>
+
+      <div class="footer__mortred">
+        <a class="mortred-btn" href="https://mortred.by/" target="_blank" rel="noopener noreferrer">
+          Powered by Mortred Forge
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <div class="container-icons">
+    <a href="mailto:egortto@yandex.by" aria-label="email">
+      <div class="emal"><img src="assets/img/email.webp" alt=""></div>
+    </a>
+    <a href="https://t.me/+2iWyY7YcU9BmMTgy" aria-label="telegram">
+      <div class="telegram"><img src="assets/img/telegram.webp" alt=""></div>
+    </a>
+  </div>
+
+  <script src="assets/js/register.js" defer></script>
+</body>
+</html>
