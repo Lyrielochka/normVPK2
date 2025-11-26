@@ -98,7 +98,7 @@
             <div class="team-page__meta">
               ${joinDate ? `<div>В клубе с: <strong>${joinDate}</strong></div>` : ""}
               <div>Дней в клубе: <strong>${daysInClub}</strong></div>
-              <div>Часов в клубе: <strong>${hours}</strong></div>
+              <div>Активность: <strong>${hours}</strong></div>
               <div>Класс: <strong>${classLevel}</strong></div>
               <div>Возраст: <strong>${age}</strong></div>
             </div>

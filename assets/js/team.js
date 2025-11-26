@@ -485,7 +485,7 @@
   {
     name: "Предеина Ангелина",
     role: "Участник",
-    photo: "assets/img/gerb.webp",
+    photo: "assets/img/фотографии/предеина.jpg",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -504,7 +504,7 @@
   {
     name: "Башлак Дарья",
     role: "Участник",
-    photo: "assets/img/gerb.webp",
+    photo: "assets/img/фотографии/башлак.jpg",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -549,6 +549,25 @@
     },
     profile: {
       displayName: "Савченко Вероника",
+      joinDate: "2025-11-26",
+      hoursInClub: 0,
+      classLevel: 0,
+      age: 0,
+      skills: [{ name: "Тактика", level: 3 },{ name: "Строевая", level: 3 },{ name: "Медицина", level: 6 },{ name: "Идеология", level: 5 },],
+      tokens: [],
+    },
+  },
+  // 29. Кочко Валерия
+  {
+    name: "Кочко Валерия",
+    role: "Участник команды",
+    photo: "assets/img/gerb.webp",
+    rank: {
+      title: "Капрал",
+      icon: "assets/img/звания/капрал.webp",
+    },
+    profile: {
+      displayName: "Кочко Валерия",
       joinDate: "2025-11-26",
       hoursInClub: 0,
       classLevel: 0,
@@ -748,7 +767,6 @@ setInterval(() => {
 document.addEventListener("DOMContentLoaded", () => {
   initTeamSlider();
 });
-
 
 
 
