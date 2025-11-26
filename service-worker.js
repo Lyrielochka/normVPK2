@@ -1,14 +1,26 @@
-const CACHE_NAME = "normvpk-static-v1";
+const CACHE_NAME = "normvpk-static-v2";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./assets/css/styles.css",
   "./assets/js/main.js",
   "./assets/js/team.js",
-  "./assets/img/fonVPK.webp",
+  "./assets/img/fonVPK2.webp",
   "./assets/img/gerb.webp",
   "./news-data.json",
 ];
+
+const ONE_YEAR = 365 * 24 * 60 * 60;
+
+function withLongCache(response) {
+  const headers = new Headers(response.headers);
+  headers.set("Cache-Control", `public, max-age=${ONE_YEAR}, immutable`);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -39,11 +51,11 @@ self.addEventListener("fetch", (event) => {
         if (cached) return cached;
         return fetch(request)
           .then((response) => {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-            return response;
+            const wrapped = withLongCache(response);
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, wrapped.clone()));
+            return wrapped;
           })
-          .catch(() => caches.match("./assets/img/fonVPK.webp"));
+          .catch(() => caches.match("./assets/img/fonVPK2.webp"));
       })
     );
     return;
@@ -53,9 +65,9 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          return response;
+          const wrapped = withLongCache(response);
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, wrapped.clone()));
+          return wrapped;
         })
         .catch(() => caches.match(request).then((cached) => cached || caches.match("./index.html")))
     );
