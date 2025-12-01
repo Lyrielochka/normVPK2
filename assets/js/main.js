@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNewsSlider(openNewsModal);
   setupNewsAdmin();
   initAchievements();
+  initLazyMap();
   refreshNewsFromFile();
 });
 
@@ -344,6 +345,31 @@ function prepareGallery(item) {
   return gallery.filter(Boolean);
 }
 
+function initLazyMap() {
+  const iframe = document.querySelector("[data-lazy-map]");
+  if (!iframe) return;
+
+  const loadMap = () => {
+    const src = iframe.dataset.mapSrc;
+    if (!src || iframe.src === src) return;
+    iframe.src = src;
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        loadMap();
+        observer.disconnect();
+      }
+    },
+    { rootMargin: "200px 0px" }
+  );
+
+  observer.observe(iframe);
+  iframe.addEventListener("pointerdown", loadMap, { once: true });
+  iframe.addEventListener("keydown", loadMap, { once: true });
+}
+
 function setupNewsModal() {
   const modal = document.querySelector("[data-news-modal]");
   if (!modal) return () => {};
@@ -439,7 +465,7 @@ function initNewsSlider(openNewsModal) {
       .map(
         (item) => `
       <div class="news__card" data-id="${item.id}">
-        <img src="${item.cover}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" class="news__image">
+        <img src="${item.cover}" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" class="news__image" sizes="(max-width: 768px) 100vw, 33vw">
         <div class="news__meta">
           <span class="news__tag">${escapeHTML(item.category)}</span>
           <span class="news__tag">${formatNewsDate(item.date)}</span>
