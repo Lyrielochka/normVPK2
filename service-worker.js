@@ -1,4 +1,4 @@
-const CACHE_NAME = "normvpk-static-v2";
+const CACHE_NAME = "normvpk-static-v5";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -7,7 +7,6 @@ const CORE_ASSETS = [
   "./assets/js/team.js",
   "./assets/img/fonVPK2.webp",
   "./assets/img/gerb.webp",
-  "./news-data.json",
 ];
 
 const ONE_YEAR = 365 * 24 * 60 * 60;
@@ -44,7 +43,19 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  const isStatic = /\.(?:css|js|json|webp|png|jpg|jpeg|svg|gif)$/i.test(url.pathname);
+  if (url.pathname.endsWith(".json")) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
+          return response;
+        })
+        .catch(() => caches.match(request, { ignoreSearch: true }))
+    );
+    return;
+  }
+
+  const isStatic = /\.(?:css|js|webp|png|jpg|jpeg|svg|gif)$/i.test(url.pathname);
   if (isStatic) {
     event.respondWith(
       caches.match(request).then((cached) => {

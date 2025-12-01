@@ -26,6 +26,8 @@ const heroSlides = [
 ];
 
 const NEWS_STORAGE_KEY = "news-items-v1";
+const NEWS_STORAGE_VERSION_KEY = "news-items-version";
+const NEWS_STORAGE_VERSION = "v2";
 const NEWS_ADMIN_SESSION_KEY = "news-admin-session";
 const NEWS_ADMIN_CODE = "vimpel2025";
 const NEWS_FILE_PATH = "news-data.json";
@@ -101,6 +103,8 @@ const storageAvailable = typeof window !== "undefined" && typeof localStorage !=
 let newsItems = loadNews();
 
 document.addEventListener("DOMContentLoaded", () => {
+  cleanupOldCaches();
+  updateServiceWorkerRegistration();
   setupBurgerMenu();
   initHeroSlider();
   const openNewsModal = setupNewsModal();
@@ -234,6 +238,11 @@ function normalizeNewsItem(item, index = 0) {
 
 function loadNews() {
   if (!storageAvailable) return defaultNews.map((item, idx) => normalizeNewsItem(item, idx));
+  const storedVersion = localStorage.getItem(NEWS_STORAGE_VERSION_KEY);
+  if (storedVersion !== NEWS_STORAGE_VERSION) {
+    localStorage.removeItem(NEWS_STORAGE_KEY);
+    localStorage.setItem(NEWS_STORAGE_VERSION_KEY, NEWS_STORAGE_VERSION);
+  }
   try {
     const raw = localStorage.getItem(NEWS_STORAGE_KEY);
     if (!raw) return defaultNews.map((item, idx) => normalizeNewsItem(item, idx));
@@ -255,9 +264,29 @@ function persistNews(items) {
   }
 }
 
+async function cleanupOldCaches() {
+  if (typeof caches === "undefined") return;
+  try {
+    const whitelist = ["normvpk-static-v5"];
+    const keys = await caches.keys();
+    await Promise.all(keys.filter((key) => !whitelist.includes(key)).map((key) => caches.delete(key)));
+  } catch (error) {
+    console.warn("Не удалось очистить старый кэш сервис-воркера", error);
+  }
+}
+
+function updateServiceWorkerRegistration() {
+  if (!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.getRegistration().then((registration) => {
+    registration?.update();
+  });
+}
+
 async function refreshNewsFromFile() {
   try {
-    const response = await fetch(NEWS_FILE_PATH, { cache: "force-cache" });
+    const url = new URL(NEWS_FILE_PATH, window.location.href);
+    url.searchParams.set("v", Date.now().toString());
+    const response = await fetch(url.toString(), { cache: "no-store" });
     if (!response.ok) throw new Error(`Failed to load ${NEWS_FILE_PATH}`);
     const parsed = await response.json();
     if (!Array.isArray(parsed)) throw new Error("Invalid news format");
