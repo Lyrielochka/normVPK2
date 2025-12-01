@@ -72,7 +72,7 @@
   {
     name: "Герасенко Николай",
     role: "Командир III Отделения",
-    photo: "assets/img/фотографии/герасенко.png",
+    photo: "assets/img/фотографии/герасенко.webp",
     rank: {
       title: "Сержант",
       icon: "assets/img/звания/сержант.webp",
@@ -153,7 +153,7 @@
   {
     name: "Клименок Илья",
     role: "Зам. Командира II Отделения",
-    photo: "assets/img/фотографии/клименок.jpg",
+    photo: "assets/img/фотографии/клименок.webp",
     rank: {
       title: "Мл. сержант",
       icon: "assets/img/звания/Мл.сержант.webp",
@@ -284,7 +284,7 @@
   {
     name: "Гребенькова Алина",
     role: "Участник команды",
-    photo: "assets/img/фотографии/аниховская.jpg",
+    photo: "assets/img/фотографии/аниховская.webp",
     rank: {
       title: "Ефрейтор",
       icon: "assets/img/звания/Ефрейтор.webp",
@@ -306,7 +306,7 @@
   {
     name: "Долбенько Виктория",
     role: "Участник команды",
-    photo: "assets/img/фотографии/долбенько.png",
+    photo: "assets/img/фотографии/долбенько.webp",
     rank: {
       title: "Ефрейтор",
       icon: "assets/img/звания/ефрейтор.webp",
@@ -346,7 +346,7 @@
   {
     name: "Балбушев Алесей",
     role: "Участник команды",
-    photo: "assets/img/фотографии/балбушев.jpg",
+    photo: "assets/img/фотографии/балбушев.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -365,7 +365,7 @@
   {
     name: "Кайтанова Мария",
     role: "Участник команды",
-    photo: "assets/img/фотографии/кайтанова.jpg",
+    photo: "assets/img/фотографии/кайтанова.webp",
     rank: {
       title: "Ефрейтор",
       icon: "assets/img/звания/рядовой.webp",
@@ -384,7 +384,7 @@
   {
     name: "Савенкова Мария",
     role: "Гл.редактор",
-    photo: "assets/img/фотографии/cавенкова.jpg",
+    photo: "assets/img/фотографии/cавенкова.webp",
     rank: {
       title: "Мл. сержант",
       icon: "assets/img/звания/мл.сержант.webp",
@@ -406,7 +406,7 @@
   {
     name: "Сивенков Игнат",
     role: "Участник",
-    photo: "assets/img/фотографии/сивенков.jpg",
+    photo: "assets/img/фотографии/сивенков.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -447,7 +447,7 @@
   {
     name: "Лаптева Анна",
     role: "Участник",
-    photo: "assets/img/фотографии/лаптева.jpg",
+    photo: "assets/img/фотографии/лаптева.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -466,7 +466,7 @@
   {
     name: "Щербин Артём",
     role: "Участник",
-    photo: "assets/img/фотографии/щербин.png",
+    photo: "assets/img/фотографии/щербин.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -485,7 +485,7 @@
   {
     name: "Предеина Ангелина",
     role: "Участник",
-    photo: "assets/img/фотографии/предеина.jpg",
+    photo: "assets/img/фотографии/предеина.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -504,7 +504,7 @@
   {
     name: "Башлак Дарья",
     role: "Участник",
-    photo: "assets/img/фотографии/башлак.jpg",
+    photo: "assets/img/фотографии/башлак.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -523,7 +523,7 @@
   {
     name: "Федорцов Андрей",
     role: "Участник",
-    photo: "assets/img/фотографии/федорцов.jpg",
+    photo: "assets/img/фотографии/федорцов.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
