@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortred Forge Button</title>
+  <style>
+    @font-face {
+      font-family: "Vinque";
+      src: url("Vinque Rg.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #0b0c10;
+      --bg2: #14161b;
+      --accent-1: #3a3f46;
+      --accent-2: #6f747c;
+      --accent-3: #d0d4d9;
+      --text: #f3f4f5;
+      --border: rgba(208, 212, 217, 0.85);
+      --shadow: rgba(208, 212, 217, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(208, 212, 217, 0.18), transparent 32%),
+        radial-gradient(circle at 80% 40%, rgba(122, 126, 133, 0.14), transparent 34%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+      color: var(--text);
+      padding: 24px;
+    }
+
+    .forge-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 22px 10px 18px;
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(120deg, var(--accent-1), var(--accent-2), var(--accent-3));
+      background-size: 210% 210%;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 14px 42px rgba(0, 0, 0, 0.55),
+        0 0 26px var(--shadow),
+        inset 0 0 1px rgba(255, 255, 255, 0.35);
+      isolation: isolate;
+      overflow: hidden;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+      animation: gradientShift 7s ease-in-out infinite, softGlow 2.6s ease-in-out infinite;
+      min-height: 96px;
+    }
+
+    .forge-btn::before {
+      content: "";
+      position: absolute;
+      inset: -36%;
+      background: radial-gradient(circle at 28% 18%, rgba(208, 212, 217, 0.32), transparent 52%);
+      filter: blur(38px);
+      opacity: 0.85;
+      z-index: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .forge-btn::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .forge-btn:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow:
+        0 16px 56px rgba(0, 0, 0, 0.65),
+        0 0 38px rgba(208, 212, 217, 0.5);
+      filter: saturate(1.03);
+    }
+
+    .forge-btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.55);
+    }
+
+    .lottie-wrap {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      display: grid;
+      place-items: center;
+      z-index: 2;
+    }
+
+    lottie-player.forge-lottie {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+    }
+
+    .text-block {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-family: "Vinque", "Georgia", serif;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+      white-space: nowrap;
+    }
+
+    .text-block .small {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .text-block .brand {
+      font-size: 19px;
+      color: #f6f7f8;
+    }
+
+    .shine {
+      position: absolute;
+      inset: -60% auto -60% -45%;
+      width: 42%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+      filter: blur(1.2px);
+      transform: skewX(-18deg);
+      animation: shine 3s ease-in-out infinite;
+      z-index: 2;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes softGlow {
+      0% { box-shadow: 0 14px 42px rgba(0, 0, 0, 0.55), 0 0 22px var(--shadow); }
+      50% { box-shadow: 0 14px 42px rgba(0, 0, 0, 0.55), 0 0 30px rgba(208, 212, 217, 0.5); }
+      100% { box-shadow: 0 14px 42px rgba(0, 0, 0, 0.55), 0 0 22px var(--shadow); }
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+      22% { opacity: 1; }
+      60% { transform: translateX(160%) skewX(-18deg); opacity: 0; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="forge-btn" href="https://mortred.by/" target="_blank" rel="noopener">
+    <span class="lottie-wrap">
+      <lottie-player
+        class="forge-lottie"
+        src="mortred-lottie.json" renderer="svg"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+    </span>
+
+    <span class="text-block">
+      <span class="small">Powered by</span>
+      <span class="brand">Mortred Forge</span>
+    </span>
+
+    <span class="shine"></span>
+  </a>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+</html>

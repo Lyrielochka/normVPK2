@@ -40,9 +40,6 @@
             <img loading="lazy" decoding="async" src="assets/img/gerb.webp" alt="????" class="layout-footer-mobile__logo">
             <span>Военно-патриотический клуб "Вымпел"</span>
           </div>
-          <a class="layout-footer-mobile__mortred" href="https://mortred.by/" target="_blank" rel="noopener noreferrer">
-            Powered by Mortred Forge
-          </a>
         </div>
       </div>
 
@@ -441,7 +438,22 @@
 
         <div class="footer__mortred">
           <a class="mortred-btn" href="https://mortred.by/" target="_blank" rel="noopener noreferrer">
-            Powered by Mortred Forge
+            <span class="mortred-btn__lottie" aria-hidden="true">
+              <lottie-player
+                class="mortred-btn__player"
+                src="button/mortred-lottie.json"
+                renderer="svg"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></lottie-player>
+            </span>
+            <span class="mortred-btn__text">
+              <span class="mortred-btn__label">Powered by</span>
+              <span class="mortred-btn__brand">Mortred Forge</span>
+            </span>
+            <span class="mortred-btn__shine" aria-hidden="true"></span>
           </a>
         </div>
       </footer>
@@ -457,6 +469,7 @@
     </a>
   </div>
 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {

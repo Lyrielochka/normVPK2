@@ -406,7 +406,7 @@
   {
     name: "Сивенков Игнат",
     role: "Участник",
-    photo: "assets/img/фотографии/сивенков.webp",
+    photo: "assets/img/фотографии/Сивенков.webp",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
