@@ -2279,9 +2279,9 @@ a {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px 18px 10px 14px;
-  min-height: 88px;
+  gap: 10px;
+  padding: 12px 20px;
+  min-height: 72px;
   border-radius: 999px;
   text-decoration: none;
   color: #f3f4f5;
@@ -2329,20 +2329,6 @@ a {
   pointer-events: none;
   z-index: 1;
 }
-.mortred-btn__lottie {
-  position: relative;
-  width: 88px;
-  height: 108px;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  z-index: 2;
-}
-.mortred-btn__player {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
-}
 .mortred-btn__text {
   position: relative;
   z-index: 2;
@@ -2376,13 +2362,9 @@ a {
   pointer-events: none;
 }
 .mortred-btn--compact {
-  gap: 12px;
-  padding: 8px 14px 8px 12px;
-  min-height: 76px;
-}
-.mortred-btn--compact .mortred-btn__lottie {
-  width: 72px;
-  height: 72px;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 64px;
 }
 .mortred-btn--compact .mortred-btn__brand {
   font-size: 17px;
@@ -2438,19 +2420,15 @@ a {
 
 @media (max-width: 900px) {
   .mortred-btn {
-    min-height: 82px;
-    gap: 12px;
-  }
-  .mortred-btn__lottie {
-    width: 78px;
-    height: 78px;
+    min-height: 70px;
+    gap: 9px;
   }
 }
 
 @media (max-width: 768px) {
   .mortred-btn {
     width: 100%;
-    min-height: 80px;
+    min-height: 70px;
   }
   .mortred-btn__brand {
     font-size: 18px;
