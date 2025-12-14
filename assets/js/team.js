@@ -325,7 +325,7 @@
   {
     name: "Шалухо Павел.",
     role: "Участник команды",
-    photo: "assets/img/gerb.webp",
+    photo: "assets/img/фотографии/шалухо.jpg",
     rank: {
       title: "Ефрейтор",
       icon: "assets/img/звания/ефрейтор.webp",
@@ -542,7 +542,7 @@
   {
     name: "Савченко Вероника",
     role: "Участник",
-    photo: "assets/img/gerb.webp",
+    photo: "assets/img/фотографии/савченко.jpg",
     rank: {
       title: "Рядовой",
       icon: "assets/img/звания/рядовой.webp",
@@ -561,7 +561,7 @@
   {
     name: "Кочко Валерия",
     role: "Участник команды",
-    photo: "assets/img/gerb.webp",
+    photo: "assets/img/фотографии/кочко.jpg",
     rank: {
       title: "Капрал",
       icon: "assets/img/звания/капрал.webp",
