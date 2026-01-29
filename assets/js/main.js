@@ -92,6 +92,10 @@ const achievements = [
   { name: "Диплом I степени", img: "assets/img/diplom2.webp" },
   { name: "Диплом I степени", img: "assets/img/дипломы/Диплом область.webp" },
   { name: "Диплом III степени", img: "assets/img/дипломы/Диплом Республика.webp" },
+  { name: "Диплом I степени", img: "assets/img/дипломы/диплом3.jpg" },
+  { name: "Диплом I степени", img: "assets/img/дипломы/диплом5.jpg" },
+  { name: "Диплом II степени", img: "assets/img/дипломы/диплом6.jpg" },
+  { name: "Диплом III степени", img: "assets/img/дипломы/диплом7.jpg" },
 ];
 
 const newsState = {
