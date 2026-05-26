@@ -1,11 +1,10 @@
-const CACHE_NAME = "normvpk-static-v5";
+const CACHE_NAME = "normvpk-static-v18";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./assets/css/styles.css",
   "./assets/js/main.js",
   "./assets/js/team.js",
-  "./assets/img/fonVPK2.webp",
   "./assets/img/gerb.webp",
 ];
 
@@ -62,11 +61,11 @@ self.addEventListener("fetch", (event) => {
         if (cached) return cached;
         return fetch(request)
           .then((response) => {
-            const wrapped = withLongCache(response);
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, wrapped.clone()));
-            return wrapped;
-          })
-          .catch(() => caches.match("./assets/img/fonVPK2.webp"));
+          const wrapped = withLongCache(response);
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, wrapped.clone()));
+          return wrapped;
+        })
+          .catch(() => caches.match("./assets/img/fonVPK.webp"));
       })
     );
     return;

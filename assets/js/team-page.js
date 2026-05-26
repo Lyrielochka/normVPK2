@@ -46,7 +46,12 @@
 
   const renderTeamGrid = () => {
     const container = document.querySelector("[data-component='team-grid']");
-    const members = typeof teamMembers !== "undefined" ? teamMembers : window.teamMembers;
+    const members =
+      typeof activeTeamMembers !== "undefined"
+        ? activeTeamMembers
+        : typeof teamMembers !== "undefined"
+          ? teamMembers
+          : window.teamMembers;
     if (!container || !Array.isArray(members)) return;
 
     container.innerHTML = members
@@ -126,7 +131,6 @@
 
   document.addEventListener("DOMContentLoaded", renderTeamGrid);
 })();
-
 
 
 

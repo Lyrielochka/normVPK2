@@ -44,7 +44,7 @@ const defaultNews = [
     fullText:
       "Команда «Вымпел» выступила в городском финале инженерной олимпиады и взяла первое место. За два часа собрали роботизированный стенд, подключили датчики движения и презентовали проект жюри.\nПеред стартом ребята провели серию тренировок в мастерской, собрали макет, протестировали питание и написали резервный сценарий. Подготовка помогла быстро устранить неполадки прямо на площадке.\nСпасибо наставникам, которые сопровождали нас на этапе монтажа и помогли с логистикой оборудования. Теперь готовим улучшенную версию стенда к республиканскому этапу.",
     cover: "assets/img/fonVPK.webp",
-    gallery: ["assets/img/fonVPK.webp", "assets/img/project2.webp"],
+    gallery: ["assets/img/fonVPK.webp", "assets/img/afgan-preview.jpg"],
   },
   {
     id: "seed-2",
@@ -56,8 +56,8 @@ const defaultNews = [
       "Провели мастер-класс по пайке и сборке простых радиосхем. Новички собрали свои первые платы под присмотром наставников.",
     fullText:
       "В мастерской прошел открытый урок по радиотехнике. Мы разобрали базовые правила пайки, показали, как работать с мультиметром и зачем нужен флюс.\nКаждый участник собрал простую радиосхему: установили резисторы, светодиоды и кнопку на макетную плату, после чего проверили все цепи. Ошибки фиксировали вместе, чтобы ребята сразу понимали, где искать неисправность.\nТем, кто захочет углубиться, выдали список ссылок и материалы для самостоятельной практики. Следующий шаг — собрать мини-прожектор и научиться рассчитывать питание.",
-    cover: "assets/img/kkk.webp",
-    gallery: ["assets/img/kkk.webp", "assets/img/project3.webp"],
+    cover: "assets/img/project1.webp",
+    gallery: ["assets/img/project1.webp", "assets/img/project3.webp"],
   },
   {
     id: "seed-3",
@@ -82,8 +82,8 @@ const defaultNews = [
       "Провели уборку территории мемориала, восстановили подсветку и проверили крепления флага. Заодно рассказали младшим ребятам про правила строя.",
     fullText:
       "Команда клуба провела волонтерскую акцию у городского мемориала. Навели порядок на территории, обновили крепления флага и восстановили подсветку вдоль дорожек.\nПараллельно устроили для младших ребят короткий инструктаж: как правильно поднимать флаг, как работать в строю и почему важно следить за формой. Финализировали выезд общим построением и чаепитием.\nСпасибо всем, кто помог с организацией и инструментами. Планируем повторить выезд весной и добавить ремонт лавочек.",
-    cover: "assets/img/project2.webp",
-    gallery: ["assets/img/project2.webp"],
+    cover: "assets/img/afgan-preview.jpg",
+    gallery: ["assets/img/afgan-preview.jpg"],
   },
 ];
 
@@ -111,10 +111,12 @@ document.addEventListener("DOMContentLoaded", () => {
   updateServiceWorkerRegistration();
   setupBurgerMenu();
   initHeroSlider();
+  initHomeMotion();
   const openNewsModal = setupNewsModal();
   initNewsSlider(openNewsModal);
   setupNewsAdmin();
   initAchievements();
+  initGraduatesCounter();
   initLazyMap();
   refreshNewsFromFile();
 });
@@ -153,7 +155,8 @@ function initHeroSlider() {
   slider.innerHTML = heroSlides
     .map(
       (slide, index) => `
-      <div class="sloi-slide ${index === 0 ? "active" : ""}" style="background-image: url('${slide.image}')">
+      <div class="sloi-slide ${index === 0 ? "active" : ""}">
+        <div class="sloi-slide__bg" style="background-image: url('${slide.image}')"></div>
         <div class="content-wrapper">
           <div class="arrows">
             <button class="arrow left" data-action="prev">‹</button>
@@ -204,6 +207,54 @@ function initHeroSlider() {
   });
 
   restartTimer();
+}
+
+function initHomeMotion() {
+  const items = document.querySelectorAll(
+    [
+      ".aboutUs__header",
+      ".aboutUs__image",
+      ".aboutUs__text",
+      ".wrapperValues__title",
+      ".wrapperValues__card",
+      ".wrapperProjects__title",
+      ".wrapperProjects__card",
+      ".team__header-row",
+      ".team__description",
+      ".team-graduates",
+      ".news__header",
+      ".news__card",
+      ".advunture__title",
+      ".advunture__description",
+      ".advunture__card",
+      ".contacts__content",
+    ].join(",")
+  );
+
+  if (!items.length) return;
+
+  items.forEach((item, index) => {
+    item.classList.add("motion-reveal");
+    item.style.setProperty("--motion-delay", `${Math.min(index % 4, 3) * 80}ms`);
+  });
+
+  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || typeof IntersectionObserver === "undefined") {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  items.forEach((item) => observer.observe(item));
 }
 
 function escapeHTML(value = "") {
@@ -372,6 +423,46 @@ function initLazyMap() {
   observer.observe(iframe);
   iframe.addEventListener("pointerdown", loadMap, { once: true });
   iframe.addEventListener("keydown", loadMap, { once: true });
+}
+
+function initGraduatesCounter() {
+  const counter = document.querySelector("[data-graduate-counter]");
+  if (!counter) return;
+
+  const target = Number(counter.dataset.graduateCounter);
+  if (!Number.isFinite(target)) return;
+
+  const run = () => {
+    const duration = 900;
+    const startTime = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min(1, (now - startTime) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.round(target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    counter.textContent = "0";
+    requestAnimationFrame(tick);
+  };
+
+  if (typeof IntersectionObserver === "undefined") {
+    run();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        run();
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(counter);
 }
 
 function setupNewsModal() {

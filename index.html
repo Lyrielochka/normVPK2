@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable">
   <title>ВПК «Вымпел»</title>
   <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/favicon-32.webp">
   <link rel="icon" type="image/webp" sizes="64x64" href="assets/img/favicon-64.webp">
@@ -31,6 +30,7 @@
         <a href="#values">Ценности</a>
         <a href="#projects">Проекты</a>
         <a href="#team">Команда</a>
+        <a href="honor-board.html">Доска почета</a>
         <a href="#news">Новости</a>
         <a href="#achievements">Достижения</a>
         <a href="#contacts">Контакты</a>
@@ -140,7 +140,7 @@
           <div class="wrapperProjects__card">
             <a href="https://afgan79.netlify.app/" target="_blank" rel="noopener noreferrer">
               <div class="project-img">
-                <img loading="lazy" decoding="async" src="assets/img/project2.png" alt="Проект 2">
+                <img loading="lazy" decoding="async" src="assets/img/afgan-preview.jpg" alt="Воины-интернационалисты в Афганистане">
               </div>
             </a>
             <div class="project-text">
@@ -179,11 +179,32 @@
           <h2 class="team__title">
             Наша команда <img loading="lazy" decoding="async" class="mark" src="assets/img/headerUS.webp" alt="">
           </h2>
-          <a class="team__view-all" href="team-all.html">Посмотреть всех</a>
+          <div class="team__links">
+            <a class="team__view-all" href="team-all.html">Посмотреть всех</a>
+            <a class="team__view-all team__view-all--honor" href="honor-board.html">Доска почета</a>
+          </div>
         </div>
         <p class="team__description">
           Люди, которые делают проекты реальностью. Их опыт, упорство и взаимная поддержка лежат в основе всех наших побед.
         </p>
+
+        <div class="team-graduates" aria-label="Выпускники ВПК">
+          <div class="team-graduates__stats">
+            <div>
+              <strong data-graduate-counter="19">19</strong>
+              <span>выпускников</span>
+            </div>
+            <div>
+              <strong>6</strong>
+              <span>на доске почета</span>
+            </div>
+          </div>
+          <div class="team-graduates__text">
+            <strong>Клуб провожает сильных, а лучших оставляет в своей истории</strong>
+            <span>19 ребят успешно завершили путь в ВПК, и 6 из них заняли место на доске почета за характер, дисциплину и вклад в общее дело.</span>
+          </div>
+          <a class="team-graduates__link" href="honor-board.html">Открыть доску почета</a>
+        </div>
 
         <div class="team__slider">
           <button class="team__nav team__nav--left" aria-label="Предыдущие участники">&#60;</button>

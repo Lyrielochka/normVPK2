@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вся команда — ВПК «Вымпел»</title>
+  <title>Доска почета — ВПК «Вымпел»</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -33,21 +33,32 @@
     </nav>
   </div>
 
-  <main class="team-page">
-    <section class="team-page__hero">
-      <h1>Наша команда</h1>
-
+  <main class="honor-page">
+    <section class="honor-hero">
+      <div class="honor-hero__inner">
+        <p class="honor-hero__eyebrow">ВПК «Вымпел»</p>
+        <h1>Доска почета</h1>
+        <p>Выпускники, которые внесли заметный вклад в развитие клуба, показали дисциплину, характер и достойный результат.</p>
+        <div class="honor-hero__meta">
+          <span>Дата выпуска</span>
+          <strong>22.05.2026</strong>
+        </div>
+      </div>
     </section>
 
-    <div class="team-page__inner">
-      <div class="team-page__grid" data-component="team-grid"></div>
-    </div>
+    <section class="honor-board" aria-label="Участники доски почета">
+      <div class="honor-board__header">
+        <h2>Имена в истории клуба</h2>
+        <p>Каждая карточка — знак благодарности за службу, ответственность и вклад в общее дело.</p>
+      </div>
+      <div class="honor-board__grid" data-component="honor-board"></div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="footer__logo">
-      <img src="assets/img/gerb.webp" alt="????" loading="lazy" decoding="async">
-      <span>Военно-патриотический клуб "«Вымпел»</span>
+      <img src="assets/img/gerb.webp" alt="Логотип клуба" loading="lazy" decoding="async">
+      <span>Военно-патриотический клуб «Вымпел»</span>
     </div>
 
     <div class="footer__line"></div>
@@ -74,7 +85,6 @@
 
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/team.js" defer></script>
-  <script src="assets/js/team-page.js" defer></script>
+  <script src="assets/js/honor-board.js" defer></script>
 </body>
 </html>
-
